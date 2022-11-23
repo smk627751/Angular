@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div class="container">
+      <div class="input">
+        <input type="number" [(ngModel)] ="in">
+        <select [(ngModel)]="select1" class="select">
+          <option>INR</option>
+          <option>USD</option>
+        </select>
+      </div>
+      <div class="input">
+        <input type="number" [(ngModel)] ="out" readonly>
+        <select [(ngModel)]="select2" class="select">
+          <option>INR</option>
+          <option>USD</option>
+        </select>
+      </div>
+      <input type="button" value="convert" (click)="convert()" class="btn">
+    </div>
+  </body>
+</html>

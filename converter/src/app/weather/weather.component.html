@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" [ngClass]="{shrink: temp==0}">
+        <img src= "{{img}}">
+        <input type="text" placeholder="Search city" [(ngModel)] ="city" (keyup)="forcast()">
+        <span class="city" *ngIf="temp != 0">{{city}}</span>
+        <span class="temp" *ngIf="temp != 0">{{temp| number:'1.0'}}°C</span>
+        <div class="additional" *ngIf="temp != 0">
+            <div class="details"><span class="approx">Feels like</span><span>{{feels_like | number:'1.0'}}°C</span></div>
+            <div class="details"><span class="approx">temp min</span><span>{{temp_min | number:'1.0'}}°C</span></div>
+            <div class="details"><span class="approx">humidity</span><span>{{humidity | number:'1.0'}}</span></div>
+            <div class="details"><span class="approx">temp max</span><span>{{temp_max | number:'1.0'}}°C</span></div>
+        </div>
+    </div>
+</body>
+</html>

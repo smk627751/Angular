@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.nav
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    background-color: rgb(231, 69, 11);
+}
+.logo
+{
+    position: absolute;
+    transform: scale(0.15);
+}

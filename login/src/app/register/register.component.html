@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ng-container *ngIf="!status">
+    <form #userdetails="ngForm" class="container" (ngSubmit)="post(userdetails.value)">
+      <span class="heading">Sign Up</span>
+      <input type="text" placeholder="First name" name="firstname" ngModel>
+      <input type="text" placeholder="Last name" name="lastname" ngModel>
+      <div class="gender">
+        <input type="radio" value="Male" name="gender" ngModel>
+        <label>Male</label>
+        <input type="radio" value="Female" name="gender" ngModel>
+        <label>Female</label>
+      </div>
+      <input type="text" placeholder="username" name="username" ngModel>
+      <input type="password" placeholder="password" name="password" ngModel>
+      <input type="email" placeholder="Email" name="email" ngModel>
+      <input type="text" placeholder="phone" name="phone" [(ngModel)]="phoneno" (keyup)="length()">
+      <input type="submit" value="Register">
+      <span class="signin">Already have an account? <a routerLink="/">Sign In</a></span>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="status">
+    <span>Registered Successful</span>
+  </ng-container>
+</body>
+</html>

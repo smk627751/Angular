@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <div class="input">
+        <input type="text" placeholder="0" readonly id="input" [(ngModel)]="in">
+        <input type="number" placeholder="0" readonly id="output" [(ngModel)]="out">
+      </div>
+      <div class="btns">
+        <input type="button" value="CE" class="btn"(click)="clr()">
+        <input type="button" value="%" class="btn"(click)="display('%')">
+        <input type="button" value="<" class="btn"(click)="delete()">
+        <input type="button" value="/" class="btn"(click)="display('/')">
+
+        <input type="button" value="7" class="btn"(click)="display('7')">
+        <input type="button" value="8" class="btn"(click)="display('8')">
+        <input type="button" value="9" class="btn"(click)="display('9')">
+        <input type="button" value="*" class="btn"(click)="display('*')">
+
+        <input type="button" value="4" class="btn"(click)="display('4')">
+        <input type="button" value="5" class="btn"(click)="display('5')">
+        <input type="button" value="6" class="btn"(click)="display('6')">
+        <input type="button" value="+" class="btn"(click)="display('+')">
+        
+        <input type="button" value="1" class="btn"(click)="display('1')">
+        <input type="button" value="2" class="btn"(click)="display('2')">
+        <input type="button" value="3" class="btn"(click)="display('3')">
+        <input type="button" value="-" class="btn"(click)="display('-')">
+
+        <input type="button" value="0" class="btn"(click)="display('0')">
+        <input type="button" value="." class="btn"(click)="display('.')">
+        <input type="button" value="=" id="eval" class="btn" (click)="evaluate()">
+      </div>
+    </div>
+  </body>
+</html>

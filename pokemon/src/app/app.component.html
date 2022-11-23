@@ -1,0 +1,19 @@
+<div class="body">
+  <app-search (searchingText)="toSearch($event)"></app-search>
+  <div class="container">
+    <ng-container *ngFor="let pokemon of pokemons">
+      <div class="card" *ngIf="searchText =='' || pokemon.name.includes(searchText) || pokemon.id == searchText || pokemon.types[0].type.name.includes(searchText)">
+        <div class="img">
+          <img src="{{pokemon.sprites.front_default}}"> 
+        </div>
+          <div class="id">
+            <span>#{{pokemon.id}}</span>
+          </div>
+          <span class="title">{{pokemon.name}}</span>
+          <div class="type">
+            <span>{{pokemon.types[0].type.name}}</span>
+          </div>
+      </div>
+    </ng-container>
+    </div>
+</div>

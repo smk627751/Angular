@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ng-container *ngIf="!loginstatus">
+    <form #userdetails="ngForm" class="container" (ngSubmit)="check(userdetails.value)">
+      <span class="heading">Sign In</span>
+      <input type="text" placeholder="username" name="username" ngModel [ngClass]="{invalid: err==true}">
+      <input type="password" placeholder="password" name="password" ngModel [ngClass]="{invalid: passErr==true}">
+      <input type="submit" value="Login">
+      <span class="signup">Don't have an account? <a routerLink="/signup">Sign Up</a></span>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="loginstatus">
+      <div class="card">
+        <div class="img"></div>
+        <h1>{{userdetails[index].firstname + ' '+userdetails[index].lastname}}</h1>
+        <p>@{{userdetails[index].username}}</p>
+        <div class="info">
+          <p><span>Gender</span>{{userdetails[index].gender}}</p>
+          <p><span>E-mail</span>{{userdetails[index].email}}</p>
+          <p><span>Phone no</span>{{userdetails[index].phone}}</p>
+        </div>
+      </div>
+  </ng-container>
+</body>
+</html>

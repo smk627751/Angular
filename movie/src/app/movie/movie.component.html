@@ -1,0 +1,41 @@
+
+<app-search (filter)="getText($event)"></app-search>
+<section class="container">
+    <ng-container *ngIf="receivedcontent != ''">
+        <div class="details">
+          <div class="close" (click)="close()">x</div>
+          <div>
+            <img [src]="getImg(receivedcontent.poster_path)" class="img2">
+          </div>
+          <div class="movieinfo">
+            <span class="title2">{{receivedcontent.title}}</span>
+            <div class="stats">
+              <div class="duration">
+                <span class="runtime">Runtime:</span>
+                <span class="min">{{receivedcontent.runtime}}min</span>
+              </div>
+              <div class="ratings">
+                <span class="runtime">Rating:</span>
+                <span class="min">{{receivedcontent.vote_average| number:'1.1-1'}}/10</span>
+              </div>
+              <div class="releaseddate">
+                <span class="date2">Released on:</span>
+                <span class="date2">{{receivedcontent.release_date}}</span>
+              </div>
+              <p class="overview">{{receivedcontent.overview}}</p>
+            </div>
+          </div>
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let movie of movies" class="content">
+      <div class="card" *ngIf="searchedText == '' || movie.title.toLowerCase().includes(searchedText) || movie.release_date.includes(searchedText)" (click)="sendData(movie)">
+        <div>
+          <img [src]="getImg(movie.poster_path)" class="img">
+        </div>
+        <div class="info">
+          <span class="title">{{movie.title}}</span>
+          <span class="date">{{movie.vote_average | number:'1.1-1'}}/10</span>
+        </div>
+      </div>
+    </ng-container>
+  </section>
